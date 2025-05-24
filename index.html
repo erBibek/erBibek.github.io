@@ -784,16 +784,17 @@
         }
 
         .education-item {
-            padding: 1.5rem;
-            border-radius: 12px;
+            padding: 1rem;
+            border-radius: 8px;
             background: rgba(255, 255, 255, 0.8);
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 107, 0, 0.1);
+            margin-bottom: 1rem;
         }
 
         .education-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
             border-color: var(--accent-color);
         }
 
@@ -801,83 +802,16 @@
             color: var(--text-color);
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 600;
+            font-size: 1.2rem;
         }
 
         .education-item p {
             font-family: 'Poppins', sans-serif;
-        }
-
-        .section-title {
-            color: #000;
-            margin-bottom: 2.5rem;
-            position: relative;
-            padding-bottom: 1.2rem;
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 2.5rem;
-            letter-spacing: -0.5px;
-            text-transform: uppercase;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-color), transparent);
-            border-radius: 2px;
-            transform-origin: left;
-            animation: titleUnderline 2s ease-in-out infinite;
-        }
-
-        @keyframes titleUnderline {
-            0% { transform: scaleX(0.3); }
-            50% { transform: scaleX(1); }
-            100% { transform: scaleX(0.3); }
-        }
-
-        .card {
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+            font-size: 0.95rem;
         }
 
         .profile-name {
-            position: relative;
-            display: inline-block;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .profile-name::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-color), transparent);
-            transform: scaleX(0.3);
-            transform-origin: left;
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 2px;
-            animation: titleUnderline 2s ease-in-out infinite;
-        }
-
-        .profile-name:hover {
-            transform: translateY(-2px);
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.15);
-        }
-
-        .profile-name:hover::after {
-            transform: scaleX(1);
+            margin-bottom: 0.5rem !important;
         }
     </style>
 </head>
@@ -932,8 +866,8 @@
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-4 text-center mb-4 mb-md-0">
-                    <h1 class="profile-name mb-4" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 2.5rem; background: linear-gradient(45deg, #000, var(--accent-color)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Bibek Singh</h1>
                     <div class="profile-glow">
+                        <h1 class="profile-name mb-3" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 2.2rem; background: linear-gradient(45deg, #000, var(--accent-color)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Bibek Singh</h1>
                         <img src="images/profile.jpg" alt="Bibek Singh" class="img-fluid profile-image" style="width:180px;height:180px;object-fit:cover;border-radius:50%;border:5px solid #ff6b00;box-shadow:0 8px 32px rgba(255,107,0,0.15),0 2px 8px rgba(0,0,0,0.08);">
                     </div>
                     <div class="social-links mt-4">
@@ -1056,14 +990,14 @@
                 <div class="col-md-8">
                     <div class="card p-4 border-0 shadow-lg" style="background: rgba(255,255,255,0.95);">
                         <h2 class="section-title mb-4">Education</h2>
-                        <div class="education-item mb-4">
+                        <div class="education-item mb-3">
                             <h4 class="mb-2">Master of Science in Computer Science</h4>
                             <p class="text-muted mb-1">Youngstown State University</p>
                             <p class="mb-0">2022 - 2024</p>
                         </div>
                         <div class="education-item">
                             <h4 class="mb-2">Bachelor of Technology in Electronics and Communication</h4>
-                            <p class="text-muted mb-1">Guru Nanak Dev University</p>
+                            <p class="text-muted mb-1">Kurukshetra University</p>
                             <p class="mb-0">2018 - 2022</p>
                         </div>
                     </div>
