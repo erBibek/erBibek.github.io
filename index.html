@@ -733,6 +733,73 @@
             visibility: visible;
             bottom: -35px;
         }
+
+        .education-item {
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 107, 0, 0.1);
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent-color);
+        }
+
+        .education-item h4 {
+            color: var(--text-color);
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+        }
+
+        .education-item p {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .section-title {
+            color: #000;
+            margin-bottom: 2.5rem;
+            position: relative;
+            padding-bottom: 1.2rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), transparent);
+            border-radius: 2px;
+            transform-origin: left;
+            animation: titleUnderline 2s ease-in-out infinite;
+        }
+
+        @keyframes titleUnderline {
+            0% { transform: scaleX(0.3); }
+            50% { transform: scaleX(1); }
+            100% { transform: scaleX(0.3); }
+        }
+
+        .card {
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+        }
     </style>
 </head>
 <body>
@@ -900,223 +967,247 @@
         </script>
     </section>
 
-    <section id="projects" class="py-5 bg-light">
+    <section id="education" class="py-5" style="background: linear-gradient(135deg, #ffecd2 0%, #ff6b00 100%); min-height: 480px;">
         <div class="container">
-            <div class="section-title-wrapper">
-                <h2 class="section-title">Featured Projects</h2>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-8">
+                    <div class="card p-4 border-0 shadow-lg" style="background: rgba(255,255,255,0.95);">
+                        <h2 class="section-title mb-4">Education</h2>
+                        <div class="education-item mb-4">
+                            <h4 class="mb-2">Master of Science in Computer Science</h4>
+                            <p class="text-muted mb-1">Youngstown State University</p>
+                            <p class="mb-0">2022 - 2024</p>
+                        </div>
+                        <div class="education-item">
+                            <h4 class="mb-2">Bachelor of Technology in Electronics and Communication</h4>
+                            <p class="text-muted mb-1">Guru Nanak Dev University</p>
+                            <p class="mb-0">2018 - 2022</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="row g-4">
-                <!-- AWS Cloud Projects -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card project-card h-100">
-                        <div class="card-img-wrapper">
-                            <img src="images/projects/aws_pipeline.jpg" class="card-img-top" alt="AWS Data Pipeline">
-                            <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                                <div class="project-links">
-                                    <a href="#" class="btn btn-light btn-sm me-2" target="_blank" title="View Live Demo">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                    <a href="https://github.com/erBibek/RGB_LED-using-an-Arduino" class="btn btn-light btn-sm me-2" target="_blank" title="View Source Code">
-                                        <i class="fab fa-github"></i>
-                                    </a>
+        </div>
+    </section>
+
+    <section id="projects" class="py-5" style="background: linear-gradient(135deg, #ffecd2 0%, #ff6b00 100%); min-height: 480px;">
+        <div class="container">
+            <div class="card p-4 border-0 shadow-lg" style="background: rgba(255,255,255,0.95);">
+                <div class="section-title-wrapper">
+                    <h2 class="section-title">Featured Projects</h2>
+                </div>
+                <div class="row g-4">
+                    <!-- AWS Cloud Projects -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card project-card h-100">
+                            <div class="card-img-wrapper">
+                                <img src="images/projects/aws_pipeline.jpg" class="card-img-top" alt="AWS Data Pipeline">
+                                <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                    <div class="project-links">
+                                        <a href="#" class="btn btn-light btn-sm me-2" target="_blank" title="View Live Demo">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                        <a href="https://github.com/erBibek/RGB_LED-using-an-Arduino" class="btn btn-light btn-sm me-2" target="_blank" title="View Source Code">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <div class="d-flex justify-content-between align-items-start mb-3">
-                                <h5 class="card-title mb-0">RGB LED Control with Arduino</h5>
-                                <span class="badge bg-gradient-info">IoT</span>
-                            </div>
-                            <p class="card-text flex-grow-1">Developed an Arduino-based RGB LED control system with serial monitor feedback for real-time status monitoring and color control.</p>
-                            <div class="tech-stack mb-3">
-                                <span class="tech-badge" title="Arduino"><i class="fas fa-microchip"></i></span>
-                                <span class="tech-badge" title="C++"><i class="fas fa-code"></i></span>
-                                <span class="tech-badge" title="Electronics"><i class="fas fa-bolt"></i></span>
-                            </div>
-                            <div class="d-flex gap-2">
-                                <a href="#" class="btn btn-primary flex-grow-1" target="_blank">
-                                    <i class="fas fa-info-circle me-2"></i>Project Details
-                                </a>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h5 class="card-title mb-0">RGB LED Control with Arduino</h5>
+                                    <span class="badge bg-gradient-info">IoT</span>
+                                </div>
+                                <p class="card-text flex-grow-1">Developed an Arduino-based RGB LED control system with serial monitor feedback for real-time status monitoring and color control.</p>
+                                <div class="tech-stack mb-3">
+                                    <span class="tech-badge" title="Arduino"><i class="fas fa-microchip"></i></span>
+                                    <span class="tech-badge" title="C++"><i class="fas fa-code"></i></span>
+                                    <span class="tech-badge" title="Electronics"><i class="fas fa-bolt"></i></span>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="#" class="btn btn-primary flex-grow-1" target="_blank">
+                                        <i class="fas fa-info-circle me-2"></i>Project Details
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Linux System Project -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card project-card h-100">
-                        <div class="card-img-wrapper">
-                            <img src="images/projects/linux_system.jpg" class="card-img-top" alt="Linux System">
-                            <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                                <div class="project-links">
-                                    <a href="#" class="btn btn-light btn-sm me-2" target="_blank" title="View Live Demo">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                    <a href="https://github.com/erBibek/drone_face_tracking" class="btn btn-light btn-sm me-2" target="_blank" title="View Source Code">
-                                        <i class="fab fa-github"></i>
-                                    </a>
+                    <!-- Linux System Project -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card project-card h-100">
+                            <div class="card-img-wrapper">
+                                <img src="images/projects/linux_system.jpg" class="card-img-top" alt="Linux System">
+                                <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                    <div class="project-links">
+                                        <a href="#" class="btn btn-light btn-sm me-2" target="_blank" title="View Live Demo">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                        <a href="https://github.com/erBibek/drone_face_tracking" class="btn btn-light btn-sm me-2" target="_blank" title="View Source Code">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <div class="d-flex justify-content-between align-items-start mb-3">
-                                <h5 class="card-title mb-0">Drone Face Tracking System</h5>
-                                <span class="badge bg-gradient-warning">ML/AI</span>
-                            </div>
-                            <p class="card-text flex-grow-1">Implemented face detection and tracking for a Tello drone using Python, enabling autonomous following capabilities.</p>
-                            <div class="tech-stack mb-3">
-                                <span class="tech-badge" title="Python"><i class="fab fa-python"></i></span>
-                                <span class="tech-badge" title="OpenCV"><i class="fas fa-eye"></i></span>
-                                <span class="tech-badge" title="Drone"><i class="fas fa-drone"></i></span>
-                            </div>
-                            <div class="d-flex gap-2">
-                                <a href="#" class="btn btn-primary flex-grow-1" target="_blank">
-                                    <i class="fas fa-info-circle me-2"></i>Project Details
-                                </a>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h5 class="card-title mb-0">Drone Face Tracking System</h5>
+                                    <span class="badge bg-gradient-warning">ML/AI</span>
+                                </div>
+                                <p class="card-text flex-grow-1">Implemented face detection and tracking for a Tello drone using Python, enabling autonomous following capabilities.</p>
+                                <div class="tech-stack mb-3">
+                                    <span class="tech-badge" title="Python"><i class="fab fa-python"></i></span>
+                                    <span class="tech-badge" title="OpenCV"><i class="fas fa-eye"></i></span>
+                                    <span class="tech-badge" title="Drone"><i class="fas fa-drone"></i></span>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="#" class="btn btn-primary flex-grow-1" target="_blank">
+                                        <i class="fas fa-info-circle me-2"></i>Project Details
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- IoT Project -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card project-card h-100">
-                        <div class="card-img-wrapper">
-                            <img src="images/projects/smart_home.jpg" class="card-img-top" alt="Smart Home Automation">
-                            <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                                <div class="project-links">
-                                    <a href="#" class="btn btn-light btn-sm me-2" target="_blank" title="View Live Demo">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                    <a href="https://github.com/erBibek/esp32_schedular" class="btn btn-light btn-sm me-2" target="_blank" title="View Source Code">
-                                        <i class="fab fa-github"></i>
-                                    </a>
+                    <!-- IoT Project -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card project-card h-100">
+                            <div class="card-img-wrapper">
+                                <img src="images/projects/smart_home.jpg" class="card-img-top" alt="Smart Home Automation">
+                                <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                    <div class="project-links">
+                                        <a href="#" class="btn btn-light btn-sm me-2" target="_blank" title="View Live Demo">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                        <a href="https://github.com/erBibek/esp32_schedular" class="btn btn-light btn-sm me-2" target="_blank" title="View Source Code">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <div class="d-flex justify-content-between align-items-start mb-3">
-                                <h5 class="card-title mb-0">ESP32 Light Scheduler</h5>
-                                <span class="badge bg-gradient-info">IoT</span>
-                            </div>
-                            <p class="card-text flex-grow-1">Built a smart lighting control system using ESP32, featuring automated scheduling and manual control capabilities.</p>
-                            <div class="tech-stack mb-3">
-                                <span class="tech-badge" title="ESP32"><i class="fas fa-microchip"></i></span>
-                                <span class="tech-badge" title="C++"><i class="fas fa-code"></i></span>
-                                <span class="tech-badge" title="IoT"><i class="fas fa-broadcast-tower"></i></span>
-                            </div>
-                            <div class="d-flex gap-2">
-                                <a href="#" class="btn btn-primary flex-grow-1" target="_blank">
-                                    <i class="fas fa-info-circle me-2"></i>Project Details
-                                </a>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h5 class="card-title mb-0">ESP32 Light Scheduler</h5>
+                                    <span class="badge bg-gradient-info">IoT</span>
+                                </div>
+                                <p class="card-text flex-grow-1">Built a smart lighting control system using ESP32, featuring automated scheduling and manual control capabilities.</p>
+                                <div class="tech-stack mb-3">
+                                    <span class="tech-badge" title="ESP32"><i class="fas fa-microchip"></i></span>
+                                    <span class="tech-badge" title="C++"><i class="fas fa-code"></i></span>
+                                    <span class="tech-badge" title="IoT"><i class="fas fa-broadcast-tower"></i></span>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="#" class="btn btn-primary flex-grow-1" target="_blank">
+                                        <i class="fas fa-info-circle me-2"></i>Project Details
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Machine Learning Project -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card project-card h-100">
-                        <div class="card-img-wrapper">
-                            <img src="images/projects/ml_project.jpg" class="card-img-top" alt="ML Project">
-                            <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                                <div class="project-links">
-                                    <a href="#" class="btn btn-light btn-sm me-2" target="_blank" title="View Live Demo">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                    <a href="https://github.com/erBibek/python_schedular" class="btn btn-light btn-sm me-2" target="_blank" title="View Source Code">
-                                        <i class="fab fa-github"></i>
-                                    </a>
+                    <!-- Machine Learning Project -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card project-card h-100">
+                            <div class="card-img-wrapper">
+                                <img src="images/projects/ml_project.jpg" class="card-img-top" alt="ML Project">
+                                <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                    <div class="project-links">
+                                        <a href="#" class="btn btn-light btn-sm me-2" target="_blank" title="View Live Demo">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                        <a href="https://github.com/erBibek/python_schedular" class="btn btn-light btn-sm me-2" target="_blank" title="View Source Code">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <div class="d-flex justify-content-between align-items-start mb-3">
-                                <h5 class="card-title mb-0">Python Light Scheduler</h5>
-                                <span class="badge bg-gradient-success">Automation</span>
-                            </div>
-                            <p class="card-text flex-grow-1">Created a Python-based lighting automation system for efficient scheduling and control of lighting systems.</p>
-                            <div class="tech-stack mb-3">
-                                <span class="tech-badge" title="Python"><i class="fab fa-python"></i></span>
-                                <span class="tech-badge" title="Automation"><i class="fas fa-robot"></i></span>
-                                <span class="tech-badge" title="Scheduling"><i class="fas fa-clock"></i></span>
-                            </div>
-                            <div class="d-flex gap-2">
-                                <a href="#" class="btn btn-primary flex-grow-1" target="_blank">
-                                    <i class="fas fa-info-circle me-2"></i>Project Details
-                                </a>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h5 class="card-title mb-0">Python Light Scheduler</h5>
+                                    <span class="badge bg-gradient-success">Automation</span>
+                                </div>
+                                <p class="card-text flex-grow-1">Created a Python-based lighting automation system for efficient scheduling and control of lighting systems.</p>
+                                <div class="tech-stack mb-3">
+                                    <span class="tech-badge" title="Python"><i class="fab fa-python"></i></span>
+                                    <span class="tech-badge" title="Automation"><i class="fas fa-robot"></i></span>
+                                    <span class="tech-badge" title="Scheduling"><i class="fas fa-clock"></i></span>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="#" class="btn btn-primary flex-grow-1" target="_blank">
+                                        <i class="fas fa-info-circle me-2"></i>Project Details
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- IoT Project 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card project-card h-100">
-                        <div class="card-img-wrapper">
-                            <img src="images/projects/industrial_iot.jpg" class="card-img-top" alt="Industrial IoT">
-                            <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                                <div class="project-links">
-                                    <a href="#" class="btn btn-light btn-sm me-2" target="_blank" title="View Live Demo">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-light btn-sm" target="_blank" title="View Source Code">
-                                        <i class="fab fa-github"></i>
-                                    </a>
+                    <!-- IoT Project 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card project-card h-100">
+                            <div class="card-img-wrapper">
+                                <img src="images/projects/industrial_iot.jpg" class="card-img-top" alt="Industrial IoT">
+                                <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                    <div class="project-links">
+                                        <a href="#" class="btn btn-light btn-sm me-2" target="_blank" title="View Live Demo">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-light btn-sm" target="_blank" title="View Source Code">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <div class="d-flex justify-content-between align-items-start mb-3">
-                                <h5 class="card-title mb-0">Industrial IoT Monitoring System</h5>
-                                <span class="badge bg-gradient-info">IoT</span>
-                            </div>
-                            <p class="card-text flex-grow-1">Built a distributed sensor network using ESP32 microcontrollers for real-time industrial equipment monitoring and data collection.</p>
-                            <div class="tech-stack mb-3">
-                                <span class="tech-badge" title="ESP32"><i class="fas fa-microchip"></i></span>
-                                <span class="tech-badge" title="C++"><i class="fas fa-code"></i></span>
-                                <span class="tech-badge" title="AWS IoT"><i class="fab fa-aws"></i></span>
-                            </div>
-                            <div class="d-flex gap-2">
-                                <a href="#" class="btn btn-primary flex-grow-1" target="_blank">
-                                    <i class="fas fa-info-circle me-2"></i>Project Details
-                                </a>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h5 class="card-title mb-0">Industrial IoT Monitoring System</h5>
+                                    <span class="badge bg-gradient-info">IoT</span>
+                                </div>
+                                <p class="card-text flex-grow-1">Built a distributed sensor network using ESP32 microcontrollers for real-time industrial equipment monitoring and data collection.</p>
+                                <div class="tech-stack mb-3">
+                                    <span class="tech-badge" title="ESP32"><i class="fas fa-microchip"></i></span>
+                                    <span class="tech-badge" title="C++"><i class="fas fa-code"></i></span>
+                                    <span class="tech-badge" title="AWS IoT"><i class="fab fa-aws"></i></span>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="#" class="btn btn-primary flex-grow-1" target="_blank">
+                                        <i class="fas fa-info-circle me-2"></i>Project Details
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- AWS Project 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card project-card h-100">
-                        <div class="card-img-wrapper">
-                            <img src="images/projects/cloud_native.jpg" class="card-img-top" alt="AWS Project">
-                            <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                                <div class="project-links">
-                                    <a href="#" class="btn btn-light btn-sm me-2" target="_blank" title="View Live Demo">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-light btn-sm" target="_blank" title="View Source Code">
-                                        <i class="fab fa-github"></i>
-                                    </a>
+                    <!-- AWS Project 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card project-card h-100">
+                            <div class="card-img-wrapper">
+                                <img src="images/projects/cloud_native.jpg" class="card-img-top" alt="AWS Project">
+                                <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                    <div class="project-links">
+                                        <a href="#" class="btn btn-light btn-sm me-2" target="_blank" title="View Live Demo">
+                                            <i class="fas fa-external-link-alt"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-light btn-sm" target="_blank" title="View Source Code">
+                                            <i class="fab fa-github"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-body d-flex flex-column">
-                            <div class="d-flex justify-content-between align-items-start mb-3">
-                                <h5 class="card-title mb-0">Cloud-Native Application Architecture</h5>
-                                <span class="badge bg-gradient-primary">Cloud</span>
-                            </div>
-                            <p class="card-text flex-grow-1">Architected and deployed a cloud-native application using AWS services, implementing CI/CD pipelines and container orchestration.</p>
-                            <div class="tech-stack mb-3">
-                                <span class="tech-badge" title="AWS"><i class="fab fa-aws"></i></span>
-                                <span class="tech-badge" title="Docker"><i class="fab fa-docker"></i></span>
-                                <span class="tech-badge" title="Kubernetes"><i class="fas fa-cube"></i></span>
-                            </div>
-                            <div class="d-flex gap-2">
-                                <a href="#" class="btn btn-primary flex-grow-1" target="_blank">
-                                    <i class="fas fa-info-circle me-2"></i>Project Details
-                                </a>
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h5 class="card-title mb-0">Cloud-Native Application Architecture</h5>
+                                    <span class="badge bg-gradient-primary">Cloud</span>
+                                </div>
+                                <p class="card-text flex-grow-1">Architected and deployed a cloud-native application using AWS services, implementing CI/CD pipelines and container orchestration.</p>
+                                <div class="tech-stack mb-3">
+                                    <span class="tech-badge" title="AWS"><i class="fab fa-aws"></i></span>
+                                    <span class="tech-badge" title="Docker"><i class="fab fa-docker"></i></span>
+                                    <span class="tech-badge" title="Kubernetes"><i class="fas fa-cube"></i></span>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="#" class="btn btn-primary flex-grow-1" target="_blank">
+                                        <i class="fas fa-info-circle me-2"></i>Project Details
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1125,106 +1216,110 @@
         </div>
     </section>
 
-    <section id="skills" class="py-5">
+    <section id="skills" class="py-5" style="background: linear-gradient(135deg, #ffecd2 0%, #ff6b00 100%); min-height: 480px;">
         <div class="container">
-            <h2 class="section-title">Skills & Expertise</h2>
-            <div class="row">
-                <!-- AWS Skills -->
-                <div class="col-md-6 mb-4">
-                    <h4>AWS Cloud Services</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 90%"></div>
+            <div class="card p-4 border-0 shadow-lg" style="background: rgba(255,255,255,0.95);">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <div class="row">
+                    <!-- AWS Skills -->
+                    <div class="col-md-6 mb-4">
+                        <h4>AWS Cloud Services</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                        <p>AWS Certified Solutions Architect with expertise in:</p>
+                        <ul>
+                            <li>EC2, S3, Lambda, and CloudFormation</li>
+                            <li>Data Engineering with Redshift and EMR</li>
+                            <li>Serverless Architecture Design</li>
+                            <li>Cloud Security and Compliance</li>
+                        </ul>
                     </div>
-                    <p>AWS Certified Solutions Architect with expertise in:</p>
-                    <ul>
-                        <li>EC2, S3, Lambda, and CloudFormation</li>
-                        <li>Data Engineering with Redshift and EMR</li>
-                        <li>Serverless Architecture Design</li>
-                        <li>Cloud Security and Compliance</li>
-                    </ul>
-                </div>
 
-                <!-- Linux Skills -->
-                <div class="col-md-6 mb-4">
-                    <h4>Linux Systems</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 95%"></div>
+                    <!-- Linux Skills -->
+                    <div class="col-md-6 mb-4">
+                        <h4>Linux Systems</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                        <p>Advanced Linux System Administration:</p>
+                        <ul>
+                            <li>System Architecture and Optimization</li>
+                            <li>Shell Scripting and Automation</li>
+                            <li>Security Hardening and Compliance</li>
+                            <li>Containerization and Orchestration</li>
+                        </ul>
                     </div>
-                    <p>Advanced Linux System Administration:</p>
-                    <ul>
-                        <li>System Architecture and Optimization</li>
-                        <li>Shell Scripting and Automation</li>
-                        <li>Security Hardening and Compliance</li>
-                        <li>Containerization and Orchestration</li>
-                    </ul>
-                </div>
 
-                <!-- IoT Skills -->
-                <div class="col-md-6 mb-4">
-                    <h4>IoT Development</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 85%"></div>
+                    <!-- IoT Skills -->
+                    <div class="col-md-6 mb-4">
+                        <h4>IoT Development</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                        <p>Expertise in IoT Hardware and Software:</p>
+                        <ul>
+                            <li>Raspberry Pi Development</li>
+                            <li>ESP32 Microcontroller Programming</li>
+                            <li>Sensor Integration and Data Collection</li>
+                            <li>IoT Cloud Integration</li>
+                        </ul>
                     </div>
-                    <p>Expertise in IoT Hardware and Software:</p>
-                    <ul>
-                        <li>Raspberry Pi Development</li>
-                        <li>ESP32 Microcontroller Programming</li>
-                        <li>Sensor Integration and Data Collection</li>
-                        <li>IoT Cloud Integration</li>
-                    </ul>
-                </div>
 
-                <!-- Machine Learning Skills -->
-                <div class="col-md-6 mb-4">
-                    <h4>Machine Learning</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 80%"></div>
+                    <!-- Machine Learning Skills -->
+                    <div class="col-md-6 mb-4">
+                        <h4>Machine Learning</h4>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                        <p>Machine Learning and AI Implementation:</p>
+                        <ul>
+                            <li>Deep Learning with TensorFlow</li>
+                            <li>Computer Vision Applications</li>
+                            <li>Predictive Analytics</li>
+                            <li>Model Deployment and Optimization</li>
+                        </ul>
                     </div>
-                    <p>Machine Learning and AI Implementation:</p>
-                    <ul>
-                        <li>Deep Learning with TensorFlow</li>
-                        <li>Computer Vision Applications</li>
-                        <li>Predictive Analytics</li>
-                        <li>Model Deployment and Optimization</li>
-                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-5 bg-light">
+    <section id="contact" class="py-5" style="background: linear-gradient(135deg, #ffecd2 0%, #ff6b00 100%); min-height: 480px;">
         <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <form id="contact-form" class="needs-validation" novalidate>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="background-color: var(--accent-color); border-color: var(--accent-color);">Send Message</button>
-                    </form>
-                </div>
-                <div class="col-md-6">
-                    <div class="card bg-light">
-                        <div class="card-body">
-                            <h5 class="card-title">Contact Information</h5>
-                            <p class="card-text">
-                                <i class="fas fa-envelope me-2"></i> erbibek4@gmail.com<br>
-                                <i class="fas fa-map-marker-alt me-2"></i> 209 Park Ave, Youngstown, Ohio, 44504
-                            </p>
-                            <div class="social-links mt-4">
-                                <a href="https://github.com/erBibek" class="btn btn-outline-dark me-2" target="_blank"><i class="fab fa-github"></i></a>
-                                <a href="https://www.linkedin.com/in/bibek-singh04/" class="btn btn-outline-primary me-2" target="_blank"><i class="fab fa-linkedin"></i></a>
-                                <a href="https://aws.amazon.com/your-profile" class="btn btn-outline-info" target="_blank"><i class="fab fa-aws"></i></a>
+            <div class="card p-4 border-0 shadow-lg" style="background: rgba(255,255,255,0.95);">
+                <h2 class="section-title">Contact Me</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <form id="contact-form" class="needs-validation" novalidate>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="background-color: var(--accent-color); border-color: var(--accent-color);">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card bg-light">
+                            <div class="card-body">
+                                <h5 class="card-title">Contact Information</h5>
+                                <p class="card-text">
+                                    <i class="fas fa-envelope me-2"></i> erbibek4@gmail.com<br>
+                                    <i class="fas fa-map-marker-alt me-2"></i> 209 Park Ave, Youngstown, Ohio, 44504
+                                </p>
+                                <div class="social-links mt-4">
+                                    <a href="https://github.com/erBibek" class="btn btn-outline-dark me-2" target="_blank"><i class="fab fa-github"></i></a>
+                                    <a href="https://www.linkedin.com/in/bibek-singh04/" class="btn btn-outline-primary me-2" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://aws.amazon.com/your-profile" class="btn btn-outline-info" target="_blank"><i class="fab fa-aws"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
