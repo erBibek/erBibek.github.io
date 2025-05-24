@@ -1035,41 +1035,71 @@
             font-size: 1.2rem;
         }
 
-        .skill-bar {
-            height: 8px;
-            background-color: #f0f0f0;
-            border-radius: 4px;
-            margin-bottom: 0.75rem;
-            overflow: hidden;
-            border: none;
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
         }
 
-        .skill-progress {
-            height: 100%;
-            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
-            border-radius: 4px;
-            transition: width 1s ease-in-out;
-        }
-
-        .skill-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .skill-list li {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 0.5rem;
+        .skill-tag {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: #000;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
-        .skill-list li::before {
-            content: '•';
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 107, 0, 0.2);
+        }
+
+        .skill-tag i {
+            font-size: 0.9rem;
+        }
+
+        .skill-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .skill-level {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-level-text {
+            font-size: 0.85rem;
             color: var(--accent-color);
-            font-weight: bold;
+            font-weight: 500;
+        }
+
+        .skill-dots {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .skill-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .skill-dot.active {
+            background: var(--accent-color);
         }
     </style>
 </head>
@@ -1473,15 +1503,27 @@
                                 <i class="fab fa-aws"></i>
                                 AWS Cloud Services
                             </h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
+                            <div class="skill-description">
+                                AWS Certified Solutions Architect with expertise in cloud infrastructure, serverless architecture, and data engineering.
                             </div>
-                            <ul class="skill-list">
-                                <li>EC2, S3, Lambda, and CloudFormation</li>
-                                <li>Data Engineering with Redshift and EMR</li>
-                                <li>Serverless Architecture Design</li>
-                                <li>Cloud Security and Compliance</li>
-                            </ul>
+                            <div class="skill-level">
+                                <span class="skill-level-text">Expert Level</span>
+                                <div class="skill-dots">
+                                    <div class="skill-dot active"></div>
+                                    <div class="skill-dot active"></div>
+                                    <div class="skill-dot active"></div>
+                                    <div class="skill-dot active"></div>
+                                    <div class="skill-dot active"></div>
+                                </div>
+                            </div>
+                            <div class="skill-tags">
+                                <span class="skill-tag"><i class="fas fa-server"></i>EC2</span>
+                                <span class="skill-tag"><i class="fas fa-database"></i>S3</span>
+                                <span class="skill-tag"><i class="fas fa-bolt"></i>Lambda</span>
+                                <span class="skill-tag"><i class="fas fa-code-branch"></i>CloudFormation</span>
+                                <span class="skill-tag"><i class="fas fa-chart-line"></i>Redshift</span>
+                                <span class="skill-tag"><i class="fas fa-shield-alt"></i>Security</span>
+                            </div>
                         </div>
                     </div>
 
@@ -1492,15 +1534,27 @@
                                 <i class="fab fa-linux"></i>
                                 Linux Systems
                             </h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%"></div>
+                            <div class="skill-description">
+                                Advanced Linux System Administration with focus on system optimization, automation, and security.
                             </div>
-                            <ul class="skill-list">
-                                <li>System Architecture and Optimization</li>
-                                <li>Shell Scripting and Automation</li>
-                                <li>Security Hardening and Compliance</li>
-                                <li>Containerization and Orchestration</li>
-                            </ul>
+                            <div class="skill-level">
+                                <span class="skill-level-text">Expert Level</span>
+                                <div class="skill-dots">
+                                    <div class="skill-dot active"></div>
+                                    <div class="skill-dot active"></div>
+                                    <div class="skill-dot active"></div>
+                                    <div class="skill-dot active"></div>
+                                    <div class="skill-dot active"></div>
+                                </div>
+                            </div>
+                            <div class="skill-tags">
+                                <span class="skill-tag"><i class="fas fa-terminal"></i>Shell Scripting</span>
+                                <span class="skill-tag"><i class="fas fa-cogs"></i>Automation</span>
+                                <span class="skill-tag"><i class="fas fa-shield-alt"></i>Security</span>
+                                <span class="skill-tag"><i class="fab fa-docker"></i>Containerization</span>
+                                <span class="skill-tag"><i class="fas fa-network-wired"></i>Networking</span>
+                                <span class="skill-tag"><i class="fas fa-server"></i>System Admin</span>
+                            </div>
                         </div>
                     </div>
 
@@ -1511,15 +1565,27 @@
                                 <i class="fas fa-microchip"></i>
                                 IoT Development
                             </h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
+                            <div class="skill-description">
+                                Expertise in IoT hardware and software development, sensor integration, and cloud connectivity.
                             </div>
-                            <ul class="skill-list">
-                                <li>Raspberry Pi Development</li>
-                                <li>ESP32 Microcontroller Programming</li>
-                                <li>Sensor Integration and Data Collection</li>
-                                <li>IoT Cloud Integration</li>
-                            </ul>
+                            <div class="skill-level">
+                                <span class="skill-level-text">Advanced Level</span>
+                                <div class="skill-dots">
+                                    <div class="skill-dot active"></div>
+                                    <div class="skill-dot active"></div>
+                                    <div class="skill-dot active"></div>
+                                    <div class="skill-dot active"></div>
+                                    <div class="skill-dot"></div>
+                                </div>
+                            </div>
+                            <div class="skill-tags">
+                                <span class="skill-tag"><i class="fab fa-raspberry-pi"></i>Raspberry Pi</span>
+                                <span class="skill-tag"><i class="fas fa-microchip"></i>ESP32</span>
+                                <span class="skill-tag"><i class="fas fa-sensor"></i>Sensors</span>
+                                <span class="skill-tag"><i class="fas fa-cloud"></i>IoT Cloud</span>
+                                <span class="skill-tag"><i class="fas fa-code"></i>Embedded C++</span>
+                                <span class="skill-tag"><i class="fas fa-wifi"></i>Wireless</span>
+                            </div>
                         </div>
                     </div>
 
@@ -1530,15 +1596,27 @@
                                 <i class="fas fa-brain"></i>
                                 Machine Learning
                             </h4>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%"></div>
+                            <div class="skill-description">
+                                Implementation of machine learning models, computer vision applications, and predictive analytics.
                             </div>
-                            <ul class="skill-list">
-                                <li>Deep Learning with TensorFlow</li>
-                                <li>Computer Vision Applications</li>
-                                <li>Predictive Analytics</li>
-                                <li>Model Deployment and Optimization</li>
-                            </ul>
+                            <div class="skill-level">
+                                <span class="skill-level-text">Advanced Level</span>
+                                <div class="skill-dots">
+                                    <div class="skill-dot active"></div>
+                                    <div class="skill-dot active"></div>
+                                    <div class="skill-dot active"></div>
+                                    <div class="skill-dot active"></div>
+                                    <div class="skill-dot"></div>
+                                </div>
+                            </div>
+                            <div class="skill-tags">
+                                <span class="skill-tag"><i class="fas fa-brain"></i>Deep Learning</span>
+                                <span class="skill-tag"><i class="fas fa-eye"></i>Computer Vision</span>
+                                <span class="skill-tag"><i class="fas fa-chart-bar"></i>Analytics</span>
+                                <span class="skill-tag"><i class="fab fa-python"></i>TensorFlow</span>
+                                <span class="skill-tag"><i class="fas fa-robot"></i>AI Models</span>
+                                <span class="skill-tag"><i class="fas fa-cloud"></i>MLOps</span>
+                            </div>
                         </div>
                     </div>
                 </div>
