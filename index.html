@@ -236,7 +236,7 @@
         }
 
         /* Remove underline from About section */
-        #about .section-title::after {
+        #about .animated-titles::after {
             display: none;
         }
 
@@ -575,7 +575,16 @@
         .animated-titles { 
             min-height: 2.5em;
             position: relative;
+            padding-bottom: 0;
+            margin-bottom: 1rem;
         }
+
+        /* Remove cursor animation from About section */
+        #about .animated-titles::after {
+            display: none;
+        }
+
+        /* Keep cursor animation for other sections */
         .animated-titles::after {
             content: '|';
             position: absolute;
@@ -584,6 +593,7 @@
             color: #000;
             font-weight: 300;
         }
+
         @keyframes blink {
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
