@@ -682,6 +682,16 @@
             }
         }
 
+        /* Remove old profile image styles */
+        .profile-glow {
+            display: none;
+        }
+
+        .profile-image-wrapper {
+            display: none;
+        }
+
+        /* New clean profile image styles */
         .profile-image {
             width: 200px !important;
             height: 200px !important;
@@ -704,27 +714,6 @@
             .profile-image {
                 width: 180px !important;
                 height: 180px !important;
-            }
-        }
-
-        .profile-glow {
-            display: inline-block;
-            border-radius: 50%;
-            box-shadow: 0 0 40px 12px rgba(255, 107, 0, 0.2), 0 0 0 8px #fff7f0;
-            animation: glowPulse 3s infinite alternate;
-            position: relative;
-            z-index: 2;
-            margin-bottom: 1rem;
-        }
-
-        @keyframes glowPulse {
-            0% { 
-                box-shadow: 0 0 40px 12px rgba(255, 107, 0, 0.2), 0 0 0 8px #fff7f0;
-                transform: scale(1);
-            }
-            100% { 
-                box-shadow: 0 0 60px 20px rgba(255, 107, 0, 0.4), 0 0 0 12px #fff7f0;
-                transform: scale(1.02);
             }
         }
 
