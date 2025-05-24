@@ -43,26 +43,21 @@
         .navbar-brand {
             color: var(--text-color) !important;
             font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 2rem;
+            font-weight: 600;
+            font-size: 1.5rem;
             letter-spacing: -0.5px;
             position: relative;
             padding: 0.5rem 0;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            background: linear-gradient(45deg, var(--text-color), var(--accent-color));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .navbar-brand:hover {
             transform: translateY(-2px);
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
-            background: linear-gradient(45deg, var(--accent-color), var(--text-color));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--accent-color) !important;
+        }
+
+        .navbar-brand i {
+            color: var(--accent-color);
         }
 
         .navbar-brand::before {
@@ -854,12 +849,45 @@
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
         }
+
+        .profile-name {
+            position: relative;
+            display: inline-block;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .profile-name::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-color), transparent);
+            transform: scaleX(0.3);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 2px;
+            animation: titleUnderline 2s ease-in-out infinite;
+        }
+
+        .profile-name:hover {
+            transform: translateY(-2px);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.15);
+        }
+
+        .profile-name:hover::after {
+            transform: scaleX(1);
+        }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">Bibek Singh</a>
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-code me-2"></i>
+                <span>Portfolio</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -904,6 +932,7 @@
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <h1 class="profile-name mb-4" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 2.5rem; background: linear-gradient(45deg, #000, var(--accent-color)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Bibek Singh</h1>
                     <div class="profile-glow">
                         <img src="images/profile.jpg" alt="Bibek Singh" class="img-fluid profile-image" style="width:180px;height:180px;object-fit:cover;border-radius:50%;border:5px solid #ff6b00;box-shadow:0 8px 32px rgba(255,107,0,0.15),0 2px 8px rgba(0,0,0,0.08);">
                     </div>
