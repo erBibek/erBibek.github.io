@@ -410,8 +410,8 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card p-4 border-0 shadow-lg" style="background: rgba(255,255,255,0.95);">
-                        <div class="animated-titles mb-2" style="font-size:1.2rem;color:#ff6b00;font-weight:700;min-height:2.5em;">
-                            <span id="typewriter"></span>
+                        <div class="animated-titles mb-3" style="font-size:1.5rem;color:#000;font-weight:600;min-height:2.5em;font-family:'Poppins',sans-serif;letter-spacing:-0.3px;">
+                            <span id="typewriter" style="background:linear-gradient(120deg, #000 0%, #333 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;"></span>
                         </div>
                         <p class="mb-3" style="font-size:1.15rem;">Technology professional with <span style="background:#ffecd2;color:#ff6b00;font-weight:600;padding:0 4px;border-radius:4px;">5+ years</span> of experience in <b>Linux Systems</b>, <b>Cloud</b>, and <b>IoT</b>. Passionate about building <span style="color:#ff6b00;font-weight:600;">scalable</span>, <span style="color:#ff6b00;font-weight:600;">secure</span>, and <span style="color:#ff6b00;font-weight:600;">innovative</span> solutions bridging hardware and software.</p>
                         <div class="d-flex flex-wrap gap-2 mb-2">
@@ -443,7 +443,22 @@
                 0% { box-shadow: 0 0 32px 8px #ff6b0033, 0 0 0 8px #fff7f0; }
                 100% { box-shadow: 0 0 48px 16px #ff6b0066, 0 0 0 12px #fff7f0; }
             }
-            .animated-titles { min-height: 2.5em; }
+            .animated-titles { 
+                min-height: 2.5em;
+                position: relative;
+            }
+            .animated-titles::after {
+                content: '|';
+                position: absolute;
+                right: -8px;
+                animation: blink 1s infinite;
+                color: #000;
+                font-weight: 300;
+            }
+            @keyframes blink {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0; }
+            }
         </style>
         <script>
             // Animated professional titles
