@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibek Singh - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .navbar {
+            background-color: var(--primary-color);
+        }
+
+        .navbar-brand, .nav-link {
+            color: white !important;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9));
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .project-card {
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-bar {
+            height: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background-color: var(--secondary-color);
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Bibek Singh</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 mb-4">Bibek Singh</h1>
+            <p class="lead mb-4">Electronics & Computer Science Engineer | Linux Systems Expert | Machine Learning & IoT Specialist</p>
+            <a href="#projects" class="btn btn-primary btn-lg">View My Work</a>
+        </div>
+    </section>
+
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Education</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <strong>Master's in Computer Science</strong>
+                                    <p class="text-muted mb-0">Specialized in advanced computing and software development</p>
+                                </li>
+                                <li>
+                                    <strong>Bachelor's in Electronics and Communication Engineering</strong>
+                                    <p class="text-muted mb-0">Focused on hardware systems and communication technologies</p>
+                                </li>
+                            </ul>
+
+                            <h5 class="card-title mt-4">Professional Experience</h5>
+                            <p>With over 5 years of hands-on experience in:</p>
+                            <ul>
+                                <li>Linux Systems Administration and Development</li>
+                                <li>Machine Learning and AI Implementation</li>
+                                <li>IoT Development using Raspberry Pi and ESP32</li>
+                                <li>AWS Cloud Services and Data Engineering</li>
+                            </ul>
+
+                            <h5 class="card-title mt-4">Areas of Expertise</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6>Hardware & IoT</h6>
+                                    <ul>
+                                        <li>Raspberry Pi Development</li>
+                                        <li>ESP32 Microcontroller Programming</li>
+                                        <li>Embedded Systems</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6>Software & Cloud</h6>
+                                    <ul>
+                                        <li>Linux Systems</li>
+                                        <li>Machine Learning</li>
+                                        <li>AWS Services</li>
+                                        <li>Data Engineering</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <div class="row">
+                <!-- Project cards will be added here -->
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="row">
+                <!-- Skills will be added here -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form id="contact-form" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h5 class="card-title">Contact Information</h5>
+                            <p class="card-text">
+                                <i class="fas fa-envelope me-2"></i> erbibek4@gmail.com<br>
+                                <i class="fas fa-map-marker-alt me-2"></i> 209 Park Ave, Youngstown, Ohio, 44504
+                            </p>
+                            <div class="social-links mt-4">
+                                <a href="https://github.com/yourusername" class="btn btn-outline-dark me-2" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/bibek-singh04/" class="btn btn-outline-primary me-2" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://aws.amazon.com/your-profile" class="btn btn-outline-info" target="_blank"><i class="fab fa-aws"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Contact Me</h5>
+                    <p><i class="fas fa-envelope me-2"></i> erbibek4@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> 209 Park Ave, Youngstown, Ohio, 44504</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <h5>Professional Profiles</h5>
+                    <div class="social-links">
+                        <a href="https://github.com/yourusername" class="text-white me-3" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://www.linkedin.com/in/bibek-singh04/" class="text-white me-3" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                        <a href="https://aws.amazon.com/your-profile" class="text-white me-3" target="_blank"><i class="fab fa-aws"></i> AWS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Form validation
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms).forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
+</html> 
