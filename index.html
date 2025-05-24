@@ -783,35 +783,87 @@
             bottom: -35px;
         }
 
-        .education-item {
-            padding: 1rem;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.8);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 107, 0, 0.1);
-            margin-bottom: 1rem;
+        .education-timeline {
+            position: relative;
+            padding-left: 2rem;
         }
 
-        .education-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent-color), transparent);
+        }
+
+        .education-item {
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+
+        .education-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .education-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 2px var(--accent-color);
+        }
+
+        .education-content {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 107, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .education-content:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             border-color: var(--accent-color);
         }
 
-        .education-item h4 {
-            color: var(--text-color);
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-header h4 {
             font-family: 'Space Grotesk', sans-serif;
             font-weight: 600;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin: 0;
+            flex: 1;
+            padding-right: 1rem;
         }
 
-        .education-item p {
+        .education-year {
             font-family: 'Poppins', sans-serif;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            white-space: nowrap;
         }
 
-        .profile-name {
-            margin-bottom: 0.5rem !important;
+        .education-school {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
         }
     </style>
 </head>
@@ -990,15 +1042,25 @@
                 <div class="col-md-8">
                     <div class="card p-4 border-0 shadow-lg" style="background: rgba(255,255,255,0.95);">
                         <h2 class="section-title mb-4">Education</h2>
-                        <div class="education-item mb-3">
-                            <h4 class="mb-2">Master of Science in Computer Science</h4>
-                            <p class="text-muted mb-1">Youngstown State University</p>
-                            <p class="mb-0">2022 - 2024</p>
-                        </div>
-                        <div class="education-item">
-                            <h4 class="mb-2">Bachelor of Technology in Electronics and Communication</h4>
-                            <p class="text-muted mb-1">Kurukshetra University</p>
-                            <p class="mb-0">2018 - 2022</p>
+                        <div class="education-timeline">
+                            <div class="education-item">
+                                <div class="education-content">
+                                    <div class="education-header">
+                                        <h4>Master of Science in Computer Science</h4>
+                                        <span class="education-year">2022 - 2024</span>
+                                    </div>
+                                    <p class="education-school">Youngstown State University</p>
+                                </div>
+                            </div>
+                            <div class="education-item">
+                                <div class="education-content">
+                                    <div class="education-header">
+                                        <h4>Bachelor of Technology in Electronics and Communication</h4>
+                                        <span class="education-year">2018 - 2022</span>
+                                    </div>
+                                    <p class="education-school">Kurukshetra University</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
