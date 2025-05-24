@@ -82,42 +82,52 @@
             position: relative;
             transition: all 0.3s ease;
             border-radius: 8px;
+            display: flex;
+            align-items: center;
         }
 
-        .nav-link:hover {
-            color: var(--accent-color) !important;
-            background: rgba(255, 107, 0, 0.1);
+        .nav-link i {
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .nav-link:hover i {
             transform: translateY(-2px);
+            opacity: 1;
+            color: var(--accent-color);
         }
 
-        .nav-link::after {
+        .nav-text {
+            position: relative;
+            display: inline-block;
+        }
+
+        .nav-text::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
             height: 2px;
             background: var(--accent-color);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-            border-radius: 2px;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
         }
 
-        .nav-link:hover::after {
-            width: 80%;
+        .nav-link:hover .nav-text::after {
+            transform: scaleX(1);
+            transform-origin: left;
         }
 
-        .nav-item {
-            position: relative;
+        .nav-item.active .nav-link i {
+            color: var(--accent-color);
+            opacity: 1;
         }
 
-        .nav-item.active .nav-link {
-            color: var(--accent-color) !important;
-            background: rgba(255, 107, 0, 0.1);
-        }
-
-        .nav-item.active .nav-link::after {
-            width: 80%;
+        .nav-item.active .nav-text::after {
+            transform: scaleX(1);
         }
 
         .navbar-toggler {
@@ -180,8 +190,21 @@
             }
 
             .nav-link {
-                padding: 0.8rem 1rem !important;
-                margin: 0.3rem 0;
+                padding: 1rem 1.5rem !important;
+                margin: 0.5rem 0;
+                background: rgba(255, 255, 255, 0.8);
+                border-radius: 12px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            }
+
+            .nav-link:hover {
+                background: rgba(255, 107, 0, 0.1);
+                transform: translateX(5px);
+            }
+
+            .nav-link i {
+                width: 24px;
+                text-align: center;
             }
         }
 
@@ -722,19 +745,34 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
+                        <a class="nav-link" href="#about">
+                            <i class="fas fa-user-circle me-2"></i>
+                            <span class="nav-text">About</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#education">Education</a>
+                        <a class="nav-link" href="#education">
+                            <i class="fas fa-graduation-cap me-2"></i>
+                            <span class="nav-text">Education</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
+                        <a class="nav-link" href="#projects">
+                            <i class="fas fa-code-branch me-2"></i>
+                            <span class="nav-text">Projects</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
+                        <a class="nav-link" href="#skills">
+                            <i class="fas fa-tools me-2"></i>
+                            <span class="nav-text">Skills</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="#contact">
+                            <i class="fas fa-envelope me-2"></i>
+                            <span class="nav-text">Contact</span>
+                        </a>
                     </li>
                 </ul>
             </div>
