@@ -840,6 +840,43 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        .profile-name {
+            position: relative;
+            display: inline-block;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-bottom: 1.5rem !important;
+        }
+
+        .profile-name::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-color), transparent);
+            transform: scaleX(0.3);
+            transform-origin: left;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 2px;
+            animation: titleUnderline 2s ease-in-out infinite;
+        }
+
+        .profile-name:hover {
+            transform: translateY(-2px);
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.15);
+        }
+
+        .profile-name:hover::after {
+            transform: scaleX(1);
+        }
+
+        @keyframes titleUnderline {
+            0% { transform: scaleX(0.3); }
+            50% { transform: scaleX(1); }
+            100% { transform: scaleX(0.3); }
+        }
     </style>
 </head>
 <body>
@@ -893,8 +930,8 @@
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <h1 class="profile-name mb-4" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 2.5rem; background: linear-gradient(45deg, #000, var(--accent-color)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Bibek Singh</h1>
                     <div class="profile-glow">
-                        <h1 class="profile-name mb-3" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 2.2rem; background: linear-gradient(45deg, #000, var(--accent-color)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Bibek Singh</h1>
                         <img src="images/profile.jpg" alt="Bibek Singh" class="img-fluid profile-image" style="width:180px;height:180px;object-fit:cover;border-radius:50%;border:5px solid #ff6b00;box-shadow:0 8px 32px rgba(255,107,0,0.15),0 2px 8px rgba(0,0,0,0.08);">
                     </div>
                     <div class="social-links mt-4">
@@ -933,42 +970,6 @@
                 </div>
             </div>
         </div>
-        <style>
-            .profile-glow {
-                display: inline-block;
-                border-radius: 50%;
-                box-shadow: 0 0 40px 12px rgba(255, 107, 0, 0.2), 0 0 0 8px #fff7f0;
-                animation: glowPulse 3s infinite alternate;
-                position: relative;
-                z-index: 2;
-            }
-            @keyframes glowPulse {
-                0% { 
-                    box-shadow: 0 0 40px 12px rgba(255, 107, 0, 0.2), 0 0 0 8px #fff7f0;
-                    transform: scale(1);
-                }
-                100% { 
-                    box-shadow: 0 0 60px 20px rgba(255, 107, 0, 0.4), 0 0 0 12px #fff7f0;
-                    transform: scale(1.02);
-                }
-            }
-            .animated-titles { 
-                min-height: 2.5em;
-                position: relative;
-            }
-            .animated-titles::after {
-                content: '|';
-                position: absolute;
-                right: -8px;
-                animation: blink 1s infinite;
-                color: #000;
-                font-weight: 300;
-            }
-            @keyframes blink {
-                0%, 100% { opacity: 1; }
-                50% { opacity: 0; }
-            }
-        </style>
         <script>
             // Animated professional titles
             const titles = [
