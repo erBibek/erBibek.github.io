@@ -665,7 +665,7 @@
         }
 
         #projects {
-            background-color: var(--card-bg) !important;
+            padding-top: 1rem !important;
         }
 
         #skills {
@@ -843,8 +843,12 @@
         }
 
         @media (max-width: 768px) {
-            .education-grid {
-                grid-template-columns: 1fr;
+            #education {
+                padding-bottom: 0.5rem !important;
+            }
+            
+            #projects {
+                padding-top: 0.5rem !important;
             }
         }
 
@@ -873,10 +877,6 @@
         .profile-name:hover {
             transform: translateY(-2px);
             text-shadow: 3px 3px 6px rgba(0,0,0,0.15);
-        }
-
-        .profile-name:hover::after {
-            transform: scaleX(1);
         }
 
         .profile-name:hover::after {
@@ -1101,6 +1101,31 @@
         .skill-dot.active {
             background: var(--accent-color);
         }
+
+        /* Add new styles for section spacing */
+        #education {
+            padding-bottom: 1rem !important;
+        }
+
+        #projects {
+            padding-top: 1rem !important;
+        }
+
+        .section-title-wrapper {
+            margin-bottom: 1rem;
+        }
+
+        .card {
+            margin-bottom: 0;
+        }
+
+        .education-grid {
+            margin-bottom: 0;
+        }
+
+        .education-card {
+            margin-bottom: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -1238,12 +1263,12 @@
         </script>
     </section>
 
-    <section id="education" class="py-5" style="background: linear-gradient(135deg, #ffecd2 0%, #ff6b00 100%); min-height: 480px;">
+    <section id="education" class="py-5" style="background: linear-gradient(135deg, #ffecd2 0%, #ff6b00 100%); min-height: auto;">
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-8">
                     <div class="card p-4 border-0 shadow-lg" style="background: rgba(255,255,255,0.95);">
-                        <h2 class="section-title mb-4">Education</h2>
+                        <h2 class="section-title mb-3">Education</h2>
                         <div class="education-grid">
                             <div class="education-card">
                                 <div class="education-degree">Master of Science</div>
@@ -1264,11 +1289,11 @@
         </div>
     </section>
 
-    <section id="projects" class="py-5" style="background: linear-gradient(135deg, #ffecd2 0%, #ff6b00 100%); min-height: 480px;">
+    <section id="projects" class="py-5" style="background: linear-gradient(135deg, #ffecd2 0%, #ff6b00 100%); min-height: auto;">
         <div class="container">
             <div class="card p-4 border-0 shadow-lg" style="background: rgba(255,255,255,0.95);">
                 <div class="section-title-wrapper">
-                    <h2 class="section-title">Featured Projects</h2>
+                    <h2 class="section-title mb-3">Featured Projects</h2>
                 </div>
                 <div class="row g-4">
                     <!-- AWS Cloud Projects -->
