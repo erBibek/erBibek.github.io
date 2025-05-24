@@ -30,18 +30,29 @@
 
         .navbar {
             background-color: var(--primary-color);
-            border-bottom: 1px solid var(--accent-color);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 107, 0, 0.1);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .navbar-brand {
             color: var(--text-color) !important;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-weight: 700;
             font-size: 1.8rem;
             letter-spacing: -0.5px;
             position: relative;
             padding: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: translateY(-2px);
         }
 
         .navbar-brand::after {
@@ -63,12 +74,20 @@
 
         .nav-link {
             color: var(--text-color) !important;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-weight: 500;
             font-size: 1.1rem;
-            padding: 0.5rem 1rem;
+            padding: 0.7rem 1.2rem !important;
+            margin: 0 0.2rem;
             position: relative;
             transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-color) !important;
+            background: rgba(255, 107, 0, 0.1);
+            transform: translateY(-2px);
         }
 
         .nav-link::after {
@@ -81,10 +100,89 @@
             background: var(--accent-color);
             transition: all 0.3s ease;
             transform: translateX(-50%);
+            border-radius: 2px;
         }
 
         .nav-link:hover::after {
             width: 80%;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-item.active .nav-link {
+            color: var(--accent-color) !important;
+            background: rgba(255, 107, 0, 0.1);
+        }
+
+        .nav-item.active .nav-link::after {
+            width: 80%;
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+            outline: none;
+        }
+
+        .navbar-toggler-icon {
+            background-image: none;
+            position: relative;
+            width: 24px;
+            height: 2px;
+            background-color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler-icon::before,
+        .navbar-toggler-icon::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background-color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler-icon::before {
+            transform: translateY(-8px);
+        }
+
+        .navbar-toggler-icon::after {
+            transform: translateY(8px);
+        }
+
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+            background-color: transparent;
+        }
+
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+            transform: rotate(45deg);
+        }
+
+        .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+            transform: rotate(-45deg);
+        }
+
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background: rgba(255, 255, 255, 0.98);
+                padding: 1rem;
+                border-radius: 12px;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+                margin-top: 1rem;
+            }
+
+            .nav-link {
+                padding: 0.8rem 1rem !important;
+                margin: 0.3rem 0;
+            }
         }
 
         .hero-section {
@@ -1133,6 +1231,68 @@
                 }, false)
             })
         })()
+
+        // Smooth scrolling and active state handling
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all navigation links
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            // Add click event listener to each link
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links
+                    navLinks.forEach(l => l.parentElement.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.parentElement.classList.add('active');
+                    
+                    // Get the target section
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    // Smooth scroll to target
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            });
+
+            // Update active state on scroll
+            window.addEventListener('scroll', function() {
+                let current = '';
+                const sections = document.querySelectorAll('section');
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= (sectionTop - sectionHeight/3)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.parentElement.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.parentElement.classList.add('active');
+                    }
+                });
+            });
+
+            // Initialize active state on page load
+            const hash = window.location.hash;
+            if (hash) {
+                const targetLink = document.querySelector(`.nav-link[href="${hash}"]`);
+                if (targetLink) {
+                    targetLink.parentElement.classList.add('active');
+                }
+            } else {
+                // Set About as active by default
+                document.querySelector('.nav-link[href="#about"]').parentElement.classList.add('active');
+            }
+        });
     </script>
 </body>
 </html> 
