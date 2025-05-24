@@ -1289,6 +1289,169 @@
                 padding-bottom: 1rem;
             }
         }
+
+        /* Enhanced Contact Information Styles */
+        .contact-info-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 2rem;
+            height: 100%;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 107, 0, 0.1);
+        }
+
+        .contact-info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent-color);
+        }
+
+        .contact-info-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2d3436;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+
+        .contact-info-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-color), transparent);
+            border-radius: 2px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 107, 0, 0.1);
+        }
+
+        .contact-info-item:hover {
+            transform: translateX(5px);
+            background: white;
+            border-color: var(--accent-color);
+            box-shadow: 0 4px 12px rgba(255, 107, 0, 0.1);
+        }
+
+        .contact-info-icon {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 50%;
+            color: #000;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-item:hover .contact-info-icon {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .contact-info-content {
+            flex: 1;
+        }
+
+        .contact-info-label {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-info-value {
+            font-size: 1rem;
+            color: #2d3436;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-value:hover {
+            color: var(--accent-color);
+        }
+
+        .contact-social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-social-link {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 50%;
+            color: #2d3436;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+
+        .contact-social-link:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-color);
+        }
+
+        .contact-social-link:hover::before {
+            opacity: 1;
+        }
+
+        .contact-social-link i {
+            position: relative;
+            z-index: 2;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-social-link:hover i {
+            color: white;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .contact-info-card {
+                margin-top: 2rem;
+            }
+
+            .contact-social-links {
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1835,18 +1998,48 @@
                         </form>
                     </div>
                     <div class="col-md-6">
-                        <div class="card bg-light">
-                            <div class="card-body">
-                                <h5 class="card-title">Contact Information</h5>
-                                <p class="card-text">
-                                    <i class="fas fa-envelope me-2"></i> erbibek4@gmail.com<br>
-                                    <i class="fas fa-map-marker-alt me-2"></i> 209 Park Ave, Youngstown, Ohio, 44504
-                                </p>
-                                <div class="social-links mt-4">
-                                    <a href="https://github.com/erBibek" class="btn btn-outline-dark me-2" target="_blank"><i class="fab fa-github"></i></a>
-                                    <a href="https://www.linkedin.com/in/bibek-singh04/" class="btn btn-outline-primary me-2" target="_blank"><i class="fab fa-linkedin"></i></a>
-                                    <a href="https://aws.amazon.com/your-profile" class="btn btn-outline-info" target="_blank"><i class="fab fa-aws"></i></a>
+                        <div class="contact-info-card">
+                            <h5 class="contact-info-title">Contact Information</h5>
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-envelope"></i>
                                 </div>
+                                <div class="contact-info-content">
+                                    <div class="contact-info-label">Email Address</div>
+                                    <a href="mailto:erbibek4@gmail.com" class="contact-info-value">erbibek4@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-info-content">
+                                    <div class="contact-info-label">Location</div>
+                                    <a href="https://maps.google.com" target="_blank" class="contact-info-value">209 Park Ave, Youngstown, Ohio, 44504</a>
+                                </div>
+                            </div>
+                            <div class="contact-info-item">
+                                <div class="contact-info-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-info-content">
+                                    <div class="contact-info-label">Phone Number</div>
+                                    <a href="tel:+1234567890" class="contact-info-value">+1 (234) 567-890</a>
+                                </div>
+                            </div>
+                            <div class="contact-social-links">
+                                <a href="https://github.com/erBibek" class="contact-social-link" target="_blank" title="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/bibek-singh04/" class="contact-social-link" target="_blank" title="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://aws.amazon.com/your-profile" class="contact-social-link" target="_blank" title="AWS">
+                                    <i class="fab fa-aws"></i>
+                                </a>
+                                <a href="mailto:erbibek4@gmail.com" class="contact-social-link" title="Email">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
