@@ -17,6 +17,8 @@
             --bg-color: #ffffff;
             --card-bg: #f8f8f8;
             --hover-color: #ff8533;
+            --gradient-start: #ffecd2;
+            --gradient-end: #ff6b00;
         }
         
         body {
@@ -258,15 +260,15 @@
             letter-spacing: 0.3px;
             border-radius: 6px;
             transition: all 0.3s ease;
-            background-color: var(--accent-color) !important;
-            border-color: var(--accent-color) !important;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)) !important;
+            border: none !important;
+            color: #000 !important;
         }
 
         .btn-primary:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: var(--hover-color) !important;
-            border-color: var(--hover-color) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(255, 107, 0, 0.3);
+            background: linear-gradient(45deg, var(--gradient-end), var(--gradient-start)) !important;
         }
 
         @keyframes fadeInUp {
@@ -313,23 +315,27 @@
         }
 
         .btn-outline-dark {
-            color: var(--accent-color);
-            border-color: var(--accent-color);
+            color: var(--accent-color) !important;
+            border-color: var(--accent-color) !important;
+            background: transparent !important;
         }
 
         .btn-outline-dark:hover {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)) !important;
+            border-color: transparent !important;
+            color: #000 !important;
         }
 
         .btn-outline-primary {
-            color: var(--accent-color);
-            border-color: var(--accent-color);
+            color: var(--accent-color) !important;
+            border-color: var(--accent-color) !important;
+            background: transparent !important;
         }
 
         .btn-outline-primary:hover {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end)) !important;
+            border-color: transparent !important;
+            color: #000 !important;
         }
 
         .btn-outline-info {
@@ -355,13 +361,16 @@
             object-fit: cover;
             border: 4px solid var(--accent-color);
             border-radius: 50%;
-            box-shadow: 0 0 20px rgba(255, 107, 0, 0.2);
-            transition: transform 0.3s ease;
+            box-shadow: 0 0 30px rgba(255, 107, 0, 0.3);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 1;
         }
 
         .profile-image:hover {
-            transform: scale(1.05);
+            transform: scale(1.05) rotate(2deg);
             border-color: var(--hover-color);
+            box-shadow: 0 0 40px rgba(255, 107, 0, 0.5);
         }
 
         .profile-image-container {
@@ -370,17 +379,66 @@
             margin-bottom: 2rem;
         }
 
-        .profile-image-container::after {
+        .profile-image-container::before {
             content: '';
             position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
             border-radius: 50%;
-            background: linear-gradient(45deg, var(--accent-color), var(--hover-color));
-            z-index: -1;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            z-index: 0;
             opacity: 0.7;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: rotateGradient 10s linear infinite;
+        }
+
+        .profile-image-container:hover::before {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+
+        @keyframes rotateGradient {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .profile-glow {
+            display: inline-block;
+            border-radius: 50%;
+            box-shadow: 0 0 40px 12px rgba(255, 107, 0, 0.2), 0 0 0 8px #fff7f0;
+            animation: glowPulse 3s infinite alternate;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes glowPulse {
+            0% { 
+                box-shadow: 0 0 40px 12px rgba(255, 107, 0, 0.2), 0 0 0 8px #fff7f0;
+                transform: scale(1);
+            }
+            100% { 
+                box-shadow: 0 0 60px 20px rgba(255, 107, 0, 0.4), 0 0 0 12px #fff7f0;
+                transform: scale(1.02);
+            }
+        }
+
+        .animated-titles { 
+            min-height: 2.5em;
+            position: relative;
+        }
+        .animated-titles::after {
+            content: '|';
+            position: absolute;
+            right: -8px;
+            animation: blink 1s infinite;
+            color: #000;
+            font-weight: 300;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
 
         #contact {
@@ -569,12 +627,20 @@
             .profile-glow {
                 display: inline-block;
                 border-radius: 50%;
-                box-shadow: 0 0 32px 8px #ff6b0033, 0 0 0 8px #fff7f0;
-                animation: glowPulse 2.5s infinite alternate;
+                box-shadow: 0 0 40px 12px rgba(255, 107, 0, 0.2), 0 0 0 8px #fff7f0;
+                animation: glowPulse 3s infinite alternate;
+                position: relative;
+                z-index: 2;
             }
             @keyframes glowPulse {
-                0% { box-shadow: 0 0 32px 8px #ff6b0033, 0 0 0 8px #fff7f0; }
-                100% { box-shadow: 0 0 48px 16px #ff6b0066, 0 0 0 12px #fff7f0; }
+                0% { 
+                    box-shadow: 0 0 40px 12px rgba(255, 107, 0, 0.2), 0 0 0 8px #fff7f0;
+                    transform: scale(1);
+                }
+                100% { 
+                    box-shadow: 0 0 60px 20px rgba(255, 107, 0, 0.4), 0 0 0 12px #fff7f0;
+                    transform: scale(1.02);
+                }
             }
             .animated-titles { 
                 min-height: 2.5em;
