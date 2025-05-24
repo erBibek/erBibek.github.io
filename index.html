@@ -1002,6 +1002,75 @@
         .badge {
             margin-bottom: 0.25rem;
         }
+
+        .skill-card {
+            background: white;
+            padding: 1.25rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 107, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(255, 107, 0, 0.1);
+            border-color: var(--accent-color);
+        }
+
+        .skill-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-title i {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+            border: none;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skill-list li {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-list li::before {
+            content: '•';
+            color: var(--accent-color);
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -1396,65 +1465,81 @@
         <div class="container">
             <div class="card p-4 border-0 shadow-lg" style="background: rgba(255,255,255,0.95);">
                 <h2 class="section-title">Skills & Expertise</h2>
-                <div class="row">
+                <div class="row g-3">
                     <!-- AWS Skills -->
-                    <div class="col-md-6 mb-4">
-                        <h4>AWS Cloud Services</h4>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
+                    <div class="col-md-6">
+                        <div class="skill-card">
+                            <h4 class="skill-title">
+                                <i class="fab fa-aws"></i>
+                                AWS Cloud Services
+                            </h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                            <ul class="skill-list">
+                                <li>EC2, S3, Lambda, and CloudFormation</li>
+                                <li>Data Engineering with Redshift and EMR</li>
+                                <li>Serverless Architecture Design</li>
+                                <li>Cloud Security and Compliance</li>
+                            </ul>
                         </div>
-                        <p>AWS Certified Solutions Architect with expertise in:</p>
-                        <ul>
-                            <li>EC2, S3, Lambda, and CloudFormation</li>
-                            <li>Data Engineering with Redshift and EMR</li>
-                            <li>Serverless Architecture Design</li>
-                            <li>Cloud Security and Compliance</li>
-                        </ul>
                     </div>
 
                     <!-- Linux Skills -->
-                    <div class="col-md-6 mb-4">
-                        <h4>Linux Systems</h4>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 95%"></div>
+                    <div class="col-md-6">
+                        <div class="skill-card">
+                            <h4 class="skill-title">
+                                <i class="fab fa-linux"></i>
+                                Linux Systems
+                            </h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                            <ul class="skill-list">
+                                <li>System Architecture and Optimization</li>
+                                <li>Shell Scripting and Automation</li>
+                                <li>Security Hardening and Compliance</li>
+                                <li>Containerization and Orchestration</li>
+                            </ul>
                         </div>
-                        <p>Advanced Linux System Administration:</p>
-                        <ul>
-                            <li>System Architecture and Optimization</li>
-                            <li>Shell Scripting and Automation</li>
-                            <li>Security Hardening and Compliance</li>
-                            <li>Containerization and Orchestration</li>
-                        </ul>
                     </div>
 
                     <!-- IoT Skills -->
-                    <div class="col-md-6 mb-4">
-                        <h4>IoT Development</h4>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
+                    <div class="col-md-6">
+                        <div class="skill-card">
+                            <h4 class="skill-title">
+                                <i class="fas fa-microchip"></i>
+                                IoT Development
+                            </h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                            <ul class="skill-list">
+                                <li>Raspberry Pi Development</li>
+                                <li>ESP32 Microcontroller Programming</li>
+                                <li>Sensor Integration and Data Collection</li>
+                                <li>IoT Cloud Integration</li>
+                            </ul>
                         </div>
-                        <p>Expertise in IoT Hardware and Software:</p>
-                        <ul>
-                            <li>Raspberry Pi Development</li>
-                            <li>ESP32 Microcontroller Programming</li>
-                            <li>Sensor Integration and Data Collection</li>
-                            <li>IoT Cloud Integration</li>
-                        </ul>
                     </div>
 
                     <!-- Machine Learning Skills -->
-                    <div class="col-md-6 mb-4">
-                        <h4>Machine Learning</h4>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%"></div>
+                    <div class="col-md-6">
+                        <div class="skill-card">
+                            <h4 class="skill-title">
+                                <i class="fas fa-brain"></i>
+                                Machine Learning
+                            </h4>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                            <ul class="skill-list">
+                                <li>Deep Learning with TensorFlow</li>
+                                <li>Computer Vision Applications</li>
+                                <li>Predictive Analytics</li>
+                                <li>Model Deployment and Optimization</li>
+                            </ul>
                         </div>
-                        <p>Machine Learning and AI Implementation:</p>
-                        <ul>
-                            <li>Deep Learning with TensorFlow</li>
-                            <li>Computer Vision Applications</li>
-                            <li>Predictive Analytics</li>
-                            <li>Model Deployment and Optimization</li>
-                        </ul>
                     </div>
                 </div>
             </div>
