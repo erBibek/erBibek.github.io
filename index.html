@@ -683,70 +683,27 @@
         }
 
         .profile-image {
-            width: 250px !important;
-            height: 250px !important;
+            width: 200px !important;
+            height: 200px !important;
             object-fit: cover;
-            border: 4px solid var(--accent-color);
             border-radius: 50%;
-            box-shadow: 0 0 30px rgba(255, 107, 0, 0.3);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            z-index: 1;
+            border: 3px solid white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            filter: grayscale(20%);
+            margin-bottom: 2rem;
         }
 
         .profile-image:hover {
-            transform: scale(1.05) rotate(2deg);
-            border-color: var(--hover-color);
-            box-shadow: 0 0 40px rgba(255, 107, 0, 0.5);
-        }
-
-        .profile-image-container {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 2rem;
-            width: 200px;
-            height: 200px;
-            border-radius: 12px;
-            background: #ffffff;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-
-        .profile-image {
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: cover;
-            transition: all 0.3s ease;
-        }
-
-        .profile-image-container:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(255, 107, 0, 0.15);
+            filter: grayscale(0%);
         }
 
-        /* Professional accent */
-        .profile-image-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--accent-color);
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-        }
-
-        .profile-image-container:hover::before {
-            opacity: 1;
-        }
-
-        /* Responsive adjustments */
         @media (max-width: 768px) {
-            .profile-image-container {
-                width: 180px;
-                height: 180px;
+            .profile-image {
+                width: 180px !important;
+                height: 180px !important;
             }
         }
 
@@ -1947,11 +1904,7 @@
                     <div class="name-container mb-4">
                         <h1 class="name-text">Bibek Singh</h1>
                     </div>
-                    <div class="profile-glow">
-                        <div class="profile-image-wrapper">
-                            <img src="images/profile.jpg" alt="Bibek Singh" class="profile-image">
-                        </div>
-                    </div>
+                    <img src="images/profile.jpg" alt="Bibek Singh" class="profile-image">
                     <div class="profile-social-links">
                         <a href="https://github.com/erBibek" class="profile-social-icon profile-github-icon" target="_blank" title="GitHub">
                             <i class="fab fa-github"></i>
