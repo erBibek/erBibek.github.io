@@ -665,7 +665,8 @@
         }
 
         #projects {
-            padding-top: 1rem !important;
+            padding-top: 0 !important;
+            margin-top: 0 !important;
         }
 
         #skills {
@@ -843,12 +844,9 @@
         }
 
         @media (max-width: 768px) {
-            #education {
-                padding-bottom: 0.5rem !important;
-            }
-            
-            #projects {
-                padding-top: 0.5rem !important;
+            .container {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
             }
         }
 
@@ -1104,11 +1102,13 @@
 
         /* Add new styles for section spacing */
         #education {
-            padding-bottom: 1rem !important;
+            padding-bottom: 0 !important;
+            margin-bottom: 0 !important;
         }
 
         #projects {
-            padding-top: 1rem !important;
+            padding-top: 0 !important;
+            margin-top: 0 !important;
         }
 
         .section-title-wrapper {
@@ -1125,6 +1125,24 @@
 
         .education-card {
             margin-bottom: 0.5rem;
+        }
+
+        /* Remove extra spacing from sections */
+        section {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .container {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
         }
     </style>
 </head>
@@ -1263,7 +1281,7 @@
         </script>
     </section>
 
-    <section id="education" class="py-5" style="background: linear-gradient(135deg, #ffecd2 0%, #ff6b00 100%); min-height: auto;">
+    <section id="education" style="background: linear-gradient(135deg, #ffecd2 0%, #ff6b00 100%);">
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-md-8">
@@ -1289,7 +1307,7 @@
         </div>
     </section>
 
-    <section id="projects" class="py-5" style="background: linear-gradient(135deg, #ffecd2 0%, #ff6b00 100%); min-height: auto;">
+    <section id="projects" style="background: linear-gradient(135deg, #ffecd2 0%, #ff6b00 100%);">
         <div class="container">
             <div class="card p-4 border-0 shadow-lg" style="background: rgba(255,255,255,0.95);">
                 <div class="section-title-wrapper">
