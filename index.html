@@ -544,8 +544,9 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-color), transparent);
+            height: 100px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), transparent);
+            pointer-events: none;
         }
 
         .footer-content {
@@ -1836,6 +1837,69 @@
                 width: 180px !important;
                 height: 180px !important;
             }
+        }
+
+        /* Update section backgrounds for seamless transition */
+        #about, #education, #projects, #skills, #contact {
+            background: linear-gradient(135deg, #ffecd2 0%, #ff6b00 100%);
+            position: relative;
+            margin: 0;
+            padding: 4rem 0;
+        }
+
+        #about::after, #education::after, #projects::after, #skills::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.1));
+            pointer-events: none;
+        }
+
+        #education::before, #projects::before, #skills::before, #contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.1));
+            pointer-events: none;
+        }
+
+        /* Update card backgrounds for better blending */
+        .card {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: none !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+        }
+
+        /* Adjust container padding for better spacing */
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Update footer transition */
+        footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            position: relative;
+            margin-top: 0;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), transparent);
+            pointer-events: none;
         }
     </style>
 </head>
