@@ -283,32 +283,97 @@
         </div>
     </section>
 
-    <section id="about" class="py-5">
+    <section id="about" class="py-5" style="background: linear-gradient(135deg, #fff7f0 0%, #ffe0c3 100%); min-height: 480px;">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h1 class="display-4 mb-4">Bibek Singh</h1>
-                    <p class="lead mb-4">Computer Science and Information Systems | Electronics and Communication Engineer | Linux Systems Architect | Machine Learning & IoT Engineer</p>
-                    
-                    <div class="mb-5">
-                        <p>I am a technology professional with 5+ years of experience in Linux Systems Architecture, Cloud Computing, and IoT Development. My expertise spans across Computer Science, Electronics Engineering, and Information Systems, enabling me to deliver innovative solutions in enterprise environments.</p>
-                        
-                        <p>With a strong foundation in both hardware and software, I specialize in:</p>
-                        <ul>
-                            <li>Linux Systems Administration and Development</li>
-                            <li>Machine Learning and AI Implementation</li>
-                            <li>IoT Development using Raspberry Pi and ESP32</li>
-                            <li>AWS Cloud Services and Data Engineering</li>
-                        </ul>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <div class="profile-glow">
+                        <img src="images/profile.jpg" alt="Bibek Singh" class="img-fluid profile-image" style="width:180px;height:180px;object-fit:cover;border-radius:50%;border:5px solid #ff6b00;box-shadow:0 8px 32px rgba(255,107,0,0.15),0 2px 8px rgba(0,0,0,0.08);">
                     </div>
-
-                    <div class="mb-4">
-                        <h5>Languages & Tools</h5>
-                        <p>Python, C++, SQL, Shell Scripting, Git, Docker, Kubernetes</p>
+                    <div class="social-links mt-4 d-flex justify-content-center gap-3">
+                        <a href="https://github.com/erBibek" class="btn btn-outline-dark rounded-circle" target="_blank" title="GitHub"><i class="fab fa-github fa-lg"></i></a>
+                        <a href="https://www.linkedin.com/in/bibek-singh04/" class="btn btn-outline-primary rounded-circle" target="_blank" title="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="https://aws.amazon.com/your-profile" class="btn btn-outline-info rounded-circle" target="_blank" title="AWS"><i class="fab fa-aws fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card p-4 border-0 shadow-lg" style="background: rgba(255,255,255,0.95);">
+                        <h1 class="display-5 fw-bold mb-2">Bibek Singh</h1>
+                        <div class="animated-titles mb-2" style="font-size:1.2rem;color:#ff6b00;font-weight:700;min-height:2.5em;">
+                            <span id="typewriter"></span>
+                        </div>
+                        <p class="mb-3" style="font-size:1.15rem;">Technology professional with <span style="background:#ffecd2;color:#ff6b00;font-weight:600;padding:0 4px;border-radius:4px;">5+ years</span> of experience in <b>Linux Systems</b>, <b>Cloud</b>, and <b>IoT</b>. Passionate about building <span style="color:#ff6b00;font-weight:600;">scalable</span>, <span style="color:#ff6b00;font-weight:600;">secure</span>, and <span style="color:#ff6b00;font-weight:600;">innovative</span> solutions bridging hardware and software.</p>
+                        <div class="d-flex flex-wrap gap-2 mb-2">
+                            <span class="badge bg-dark" data-bs-toggle="tooltip" title="Python programming"><i class="fab fa-python me-1"></i> Python</span>
+                            <span class="badge bg-dark" data-bs-toggle="tooltip" title="Linux systems & scripting"><i class="fab fa-linux me-1"></i> Linux</span>
+                            <span class="badge bg-dark" data-bs-toggle="tooltip" title="Amazon Web Services"><i class="fab fa-aws me-1"></i> AWS</span>
+                            <span class="badge bg-dark" data-bs-toggle="tooltip" title="Internet of Things"><i class="fas fa-microchip me-1"></i> IoT</span>
+                            <span class="badge bg-dark" data-bs-toggle="tooltip" title="SQL & Databases"><i class="fas fa-database me-1"></i> SQL</span>
+                            <span class="badge bg-dark" data-bs-toggle="tooltip" title="Docker & Containers"><i class="fab fa-docker me-1"></i> Docker</span>
+                            <span class="badge bg-dark" data-bs-toggle="tooltip" title="Version Control"><i class="fab fa-git-alt me-1"></i> Git</span>
+                        </div>
+                        <div class="mt-3 d-flex flex-wrap gap-2">
+                            <a href="#contact" class="btn btn-primary">Contact Me</a>
+                            <a href="#projects" class="btn btn-outline-dark">View Projects</a>
+                            <a href="resume.pdf" class="btn btn-outline-primary" target="_blank"><i class="fas fa-file-download me-1"></i>Download Resume</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <style>
+            .profile-glow {
+                display: inline-block;
+                border-radius: 50%;
+                box-shadow: 0 0 32px 8px #ff6b0033, 0 0 0 8px #fff7f0;
+                animation: glowPulse 2.5s infinite alternate;
+            }
+            @keyframes glowPulse {
+                0% { box-shadow: 0 0 32px 8px #ff6b0033, 0 0 0 8px #fff7f0; }
+                100% { box-shadow: 0 0 48px 16px #ff6b0066, 0 0 0 12px #fff7f0; }
+            }
+            .animated-titles { min-height: 2.5em; }
+        </style>
+        <script>
+            // Animated professional titles
+            const titles = [
+                "Computer Science and Information Systems",
+                "Electronics and Communication Engineer",
+                "Linux Systems Architect",
+                "Machine Learning & IoT Engineer"
+            ];
+            let twIndex = 0, charIndex = 0, isDeleting = false;
+            function typeWriter() {
+                const el = document.getElementById('typewriter');
+                if (!el) return;
+                let current = titles[twIndex];
+                if (isDeleting) {
+                    el.textContent = current.substring(0, charIndex--);
+                    if (charIndex < 0) {
+                        isDeleting = false;
+                        twIndex = (twIndex + 1) % titles.length;
+                        setTimeout(typeWriter, 500);
+                    } else {
+                        setTimeout(typeWriter, 30);
+                    }
+                } else {
+                    el.textContent = current.substring(0, charIndex++);
+                    if (charIndex > current.length) {
+                        isDeleting = true;
+                        setTimeout(typeWriter, 1200);
+                    } else {
+                        setTimeout(typeWriter, 60);
+                    }
+                }
+            }
+            document.addEventListener('DOMContentLoaded', function() {
+                typeWriter();
+                var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+                tooltipTriggerList.map(function (tooltipTriggerEl) {
+                    return new bootstrap.Tooltip(tooltipTriggerEl);
+                });
+            });
+        </script>
     </section>
 
     <section id="projects" class="py-5 bg-light">
