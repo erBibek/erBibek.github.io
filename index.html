@@ -479,6 +479,13 @@
         }
 
         /* Enhanced Social Icons */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
         .social-icon {
             display: inline-flex;
             align-items: center;
@@ -489,10 +496,11 @@
             background: white;
             color: #333;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 2px solid transparent;
         }
 
         .social-icon::before {
@@ -500,21 +508,22 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, #ff6b00, #ff8533);
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.4s ease;
             z-index: 1;
         }
 
         .social-icon i {
             position: relative;
             z-index: 2;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            font-size: 1.2rem;
         }
 
         .social-icon:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255,107,0,0.2);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(255,107,0,0.3);
         }
 
         .social-icon:hover::before {
@@ -523,20 +532,32 @@
 
         .social-icon:hover i {
             color: white;
-            transform: scale(1.1);
+            transform: scale(1.2) rotate(360deg);
         }
 
-        /* Specific icon colors */
+        /* Specific icon colors and effects */
+        .github-icon {
+            border-color: #333;
+        }
+
         .github-icon:hover {
-            background: #333;
+            border-color: transparent;
+        }
+
+        .linkedin-icon {
+            border-color: #0077b5;
         }
 
         .linkedin-icon:hover {
-            background: #0077b5;
+            border-color: transparent;
+        }
+
+        .aws-icon {
+            border-color: #ff9900;
         }
 
         .aws-icon:hover {
-            background: #ff9900;
+            border-color: transparent;
         }
 
         /* Pulse animation for icons */
@@ -548,6 +569,30 @@
 
         .social-icon:hover {
             animation: iconPulse 1s infinite;
+        }
+
+        /* Tooltip for icons */
+        .social-icon::after {
+            content: attr(title);
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 4px 8px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover::after {
+            opacity: 1;
+            visibility: visible;
+            bottom: -35px;
         }
     </style>
 </head>
@@ -587,15 +632,15 @@
                     <div class="profile-glow">
                         <img src="images/profile.jpg" alt="Bibek Singh" class="img-fluid profile-image" style="width:180px;height:180px;object-fit:cover;border-radius:50%;border:5px solid #ff6b00;box-shadow:0 8px 32px rgba(255,107,0,0.15),0 2px 8px rgba(0,0,0,0.08);">
                     </div>
-                    <div class="social-links mt-4 d-flex justify-content-center gap-3">
+                    <div class="social-links mt-4">
                         <a href="https://github.com/erBibek" class="social-icon github-icon" target="_blank" title="GitHub">
-                            <i class="fab fa-github fa-lg"></i>
+                            <i class="fab fa-github"></i>
                         </a>
                         <a href="https://www.linkedin.com/in/bibek-singh04/" class="social-icon linkedin-icon" target="_blank" title="LinkedIn">
-                            <i class="fab fa-linkedin fa-lg"></i>
+                            <i class="fab fa-linkedin"></i>
                         </a>
                         <a href="https://aws.amazon.com/your-profile" class="social-icon aws-icon" target="_blank" title="AWS">
-                            <i class="fab fa-aws fa-lg"></i>
+                            <i class="fab fa-aws"></i>
                         </a>
                     </div>
                 </div>
