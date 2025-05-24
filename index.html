@@ -1936,6 +1936,64 @@
                 padding: 3px;
             }
         }
+
+        /* Clean Profile Image Design */
+        .profile-image-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+            padding: 3px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .profile-image {
+            width: 200px !important;
+            height: 200px !important;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid white;
+            transition: all 0.3s ease;
+            filter: grayscale(20%);
+        }
+
+        .profile-image-wrapper:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255, 107, 0, 0.15);
+        }
+
+        .profile-image-wrapper:hover .profile-image {
+            filter: grayscale(0%);
+        }
+
+        /* Subtle accent border */
+        .profile-image-wrapper::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--accent-color), transparent);
+            z-index: -1;
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+
+        .profile-image-wrapper:hover::after {
+            opacity: 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .profile-image {
+                width: 180px !important;
+                height: 180px !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1993,7 +2051,7 @@
                         <h1 class="name-text">Bibek Singh</h1>
                     </div>
                     <div class="profile-glow">
-                        <div class="profile-image-container">
+                        <div class="profile-image-wrapper">
                             <img src="images/profile.jpg" alt="Bibek Singh" class="profile-image">
                         </div>
                     </div>
