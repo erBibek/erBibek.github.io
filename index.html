@@ -235,7 +235,16 @@
             text-align: left;
         }
 
-        .section-title::after {
+        /* Remove underline from About section */
+        #about .section-title::after {
+            display: none;
+        }
+
+        /* Keep underline for other sections */
+        #education .section-title::after,
+        #projects .section-title::after,
+        #skills .section-title::after,
+        #contact .section-title::after {
             content: '';
             position: absolute;
             bottom: 0;
